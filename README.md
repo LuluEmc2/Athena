@@ -8,7 +8,7 @@ Project based in MVC design pattern
 
 Technologies used in the project:
 
-* C
+* CPP
 
 ## Contribution Guidelines:
 
