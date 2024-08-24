@@ -4,6 +4,8 @@ An open source library manager.
 
 ## Built with
 
+Project based in MVC design pattern
+
 Technologies used in the project:
 
 * C
