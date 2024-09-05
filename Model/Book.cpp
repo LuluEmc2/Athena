@@ -2,12 +2,11 @@
 
 using namespace std;
 
-Book::Book(string _title, string _description, int _pages, Container* _container)
+Book::Book(string _title, string _description, int _pages)
 {
 	m_title = _title;
 	m_description = _description;
 	m_pages = _pages;
-	m_container = _container;
 }
 
 string Book::GetTitle() const
@@ -25,7 +24,7 @@ int Book::GetPages() const
 	return m_pages;
 }
 
-Container* Book::GetContainer() const
+list<Container*> Book::GetContainers() const
 {
-	return m_container;
+	return m_containers;
 }

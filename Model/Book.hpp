@@ -9,17 +9,17 @@ using namespace std;
 class Book
 {
 	public:
-		Book(string _title, string _description, int _pages, Container* _container);
+		Book(string _title, string _description, int _pages);
 		string GetTitle() const;
 		string GetDescription() const;
 		int GetPages() const;
-		Container* GetContainer() const;
+		list<Container*> GetContainers() const;
 
 	private:
 		string m_title;
 		string m_description;
 		int m_pages;
-		Container* m_container;
+		list<Container*> m_containers;
 
 };
 
