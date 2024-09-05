@@ -1,13 +1,13 @@
 #include "Book.hpp"
-#include <string>
 
 using namespace std;
 
-Book::Book(string _title, string _description, int _pages)
+Book::Book(string _title, string _description, int _pages, Author* _author)
 {
 	m_title = _title;
 	m_description = _description;
 	m_pages = _pages;
+	m_author = _author;
 }
 
 string Book::GetTitle() const
@@ -23,4 +23,9 @@ string Book::GetDescription() const
 int Book::GetPages() const
 {
 	return m_pages;
+}
+
+Author* Book::GetAuthor() const
+{
+	return m_author;
 }
