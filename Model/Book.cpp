@@ -28,3 +28,8 @@ list<Container*> Book::GetContainers() const
 {
 	return m_containers;
 }
+
+void Book::AddContainer(Container* _container)
+{
+	m_containers.push_back(_container);
+}

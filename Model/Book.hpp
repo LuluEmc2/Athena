@@ -14,6 +14,7 @@ class Book
 		string GetDescription() const;
 		int GetPages() const;
 		list<Container*> GetContainers() const;
+		void AddContainer(Container* _container);
 
 	private:
 		string m_title;
