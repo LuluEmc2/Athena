@@ -33,3 +33,8 @@ void Book::AddContainer(Container* _container)
 {
 	m_containers.push_back(_container);
 }
+
+void Book::RemoveContainer(Container* _container)
+{
+	m_containers.remove(_container);
+}
