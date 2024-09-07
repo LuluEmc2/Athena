@@ -10,10 +10,12 @@ class Book
 {
 	public:
 		Book(string _title, string _description, int _pages);
+
 		string GetTitle() const;
 		string GetDescription() const;
 		int GetPages() const;
 		list<Container*> GetContainers() const;
+
 		void AddContainer(Container* _container);
 		void RemoveContainer(Container* _container);
 

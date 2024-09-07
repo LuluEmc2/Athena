@@ -12,10 +12,12 @@ class Container
 {
 	public:
 		Container(string _name, string _description);
+
 		string GetName() const;
 		string GetDescription() const;
         list<Book*> GetBooks() const;
         list<Container*> GetContainers() const;
+
 		void AddBook(Book* _book);
 		void RemoveBook(Book* _book);
 		void AddContainer(Container* _container);
