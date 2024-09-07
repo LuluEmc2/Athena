@@ -22,3 +22,13 @@ list<Container*> Container::GetContainers() const
 {
     return m_containers;
 }
+
+void Container::AddBook(Book* _book)
+{
+    m_books.push_back(_book);
+}
+
+void Container::RemoveBook(Book* _book)
+{
+    m_books.remove(_book);
+}

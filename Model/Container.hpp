@@ -15,6 +15,8 @@ class Container
 		string GetName() const;
         list<Book*> GetBooks() const;
         list<Container*> GetContainers() const;
+		void AddBook(Book* _book);
+		void RemoveBook(Book* _book);
 
 	private:
 		string m_name;
