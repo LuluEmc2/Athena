@@ -3,14 +3,20 @@
 
 using namespace std;
 
-Container::Container(string _name)
+Container::Container(string _name, string _description)
 {
     m_name = _name;
+    m_description = _description;
 }
 
 string Container::GetName() const
 {
     return m_name;
+}
+
+string Container::GetDescription() const
+{
+    return m_description;
 }
 
 list<Book*> Container::GetBooks() const
