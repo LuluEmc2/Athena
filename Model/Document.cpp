@@ -2,11 +2,12 @@
 
 using namespace std;
 
-Document::Document(string _title, string _description, int _pages)
+Document::Document(string _title, string _description, int _pages, int _year)
 {
 	m_title = _title;
 	m_description = _description;
 	m_pages = _pages;
+	m_year = _year;
 }
 
 
@@ -25,6 +26,11 @@ int Document::GetPages() const
 	return m_pages;
 }
 
+int Document::GetYear() const
+{
+	return m_year;
+}
+
 
 void Document::SetTitle(string _title)
 {
@@ -39,4 +45,9 @@ void Document::SetDescription(string _description)
 void Document::SetPages(int _pages)
 {
 	m_pages = _pages;
+}
+
+void Document::SetYear(int _year)
+{
+	m_year = _year;
 }
