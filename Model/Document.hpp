@@ -1,15 +1,15 @@
-#ifndef _BOOK_
-#define _BOOK_
+#ifndef _Document_
+#define _Document_
 
 #include "Container.hpp"
 #include <string>
 
 using namespace std;
 
-class Book
+class Document
 {
 	public:
-		Book(string _title, string _description, int _pages);
+		Document(string _title, string _description, int _pages);
 
 		string GetTitle() const;
 		string GetDescription() const;

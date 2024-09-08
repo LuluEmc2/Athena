@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Book;
+class Document;
 
 class Container
 {
@@ -15,21 +15,21 @@ class Container
 
 		string GetName() const;
 		string GetDescription() const;
-        list<Book*> GetBooks() const;
+        list<Document*> GetDocuments() const;
         list<Container*> GetContainers() const;
 
 		void SetName(string _name);
 		void SetDescription(string _description);
 
-		void AddBook(Book* _book);
-		void RemoveBook(Book* _book);
+		void AddDocument(Document* _document);
+		void RemoveDocument(Document* _document);
 		void AddContainer(Container* _container);
 		void RemoveContainer(Container* _container);
 
 	private:
 		string m_name;
 		string m_description;
-		list<Book*> m_books;
+		list<Document*> m_documents;
         list<Container*> m_containers;
 };
 

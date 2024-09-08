@@ -1,5 +1,5 @@
 #include "Container.hpp"
-#include "Book.hpp"
+#include "Document.hpp"
 
 using namespace std;
 
@@ -20,9 +20,9 @@ string Container::GetDescription() const
     return m_description;
 }
 
-list<Book*> Container::GetBooks() const
+list<Document*> Container::GetDocuments() const
 {
-    return m_books;
+    return m_documents;
 }
 
 list<Container*> Container::GetContainers() const
@@ -42,14 +42,14 @@ void Container::SetDescription(string _description)
 }
 
 
-void Container::AddBook(Book* _book)
+void Container::AddDocument(Document* _document)
 {
-    m_books.push_back(_book);
+    m_documents.push_back(_document);
 }
 
-void Container::RemoveBook(Book* _book)
+void Container::RemoveDocument(Document* _document)
 {
-    m_books.remove(_book);
+    m_documents.remove(_document);
 }
 
 void Container::AddContainer(Container* _container)
