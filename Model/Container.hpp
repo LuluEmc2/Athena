@@ -8,7 +8,7 @@ using namespace std;
 class Container
 {
 	public:
-		Container(string _name, string _description);
+		Container(string _name, string _description = "");
 
 		string GetName() const;
 		string GetDescription() const;
