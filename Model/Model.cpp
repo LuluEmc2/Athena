@@ -35,3 +35,9 @@ void Model::Store(Document* _document, Container* _container)
     m_documentsToContainers[_document] = _container;
     m_containersToDocuments[_container] = _document;
 }
+
+void Model::Store(Container* _childContainer, Container* _parentContainer)
+{
+    m_childsToParents[_childContainer] = _parentContainer;
+    m_parentsToChilds[_parentContainer] = _childContainer;
+}
