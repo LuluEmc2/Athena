@@ -14,7 +14,11 @@ class Model
         Model();
 
         list<Document*> GetDocuments();
+        list<Document*> GetDocuments(Container* _container);
         list<Container*> GetContainers();
+        list<Container*> GetContainers(Document* _document);
+        Container* GetParent(Container* _childContainer);
+        list<Container*> GetChilds(Container* _parentContainer);
 
         void AddDocument(Document* _document);
         void RemoveDocument(Document* _document);

@@ -12,9 +12,29 @@ list<Document*> Model::GetDocuments()
     return m_documents;
 }
 
+list<Document*> Model::GetDocuments(Container* _container)
+{
+    return m_containersToDocuments[_container];
+}
+
 list<Container*> Model::GetContainers()
 {
     return m_containers;
+}
+
+list<Container*> Model::GetContainers(Document* _document)
+{
+    return m_documentsToContainers[_document];
+}
+
+Container* Model::GetParent(Container* _childContainer)
+{
+    return m_childsToParents[_childContainer];
+}
+
+list<Container*> Model::GetChilds(Container* _parentContainer)
+{
+    return m_parentsToChilds[_parentContainer];
 }
 
 
