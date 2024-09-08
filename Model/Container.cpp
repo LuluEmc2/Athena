@@ -9,6 +9,7 @@ Container::Container(string _name, string _description)
     m_description = _description;
 }
 
+
 string Container::GetName() const
 {
     return m_name;
@@ -28,6 +29,18 @@ list<Container*> Container::GetContainers() const
 {
     return m_containers;
 }
+
+
+void Container::SetName(string _name)
+{
+    m_name = _name;
+}
+
+void Container::SetDescription(string _description)
+{
+    m_description = _description;
+}
+
 
 void Container::AddBook(Book* _book)
 {
