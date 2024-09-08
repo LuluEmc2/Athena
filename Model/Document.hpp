@@ -1,5 +1,5 @@
-#ifndef _Document_
-#define _Document_
+#ifndef _DOCUMENT_
+#define _DOCUMENT_
 
 #include "Container.hpp"
 #include <string>
