@@ -2,7 +2,6 @@
 #define _CONTAINER_
 
 #include <string>
-#include <list>
 
 using namespace std;
 
