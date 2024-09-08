@@ -6,8 +6,6 @@
 
 using namespace std;
 
-class Document;
-
 class Container
 {
 	public:
@@ -15,21 +13,17 @@ class Container
 
 		string GetName() const;
 		string GetDescription() const;
-        list<Document*> GetDocuments() const;
         list<Container*> GetContainers() const;
 
 		void SetName(string _name);
 		void SetDescription(string _description);
 
-		void AddDocument(Document* _document);
-		void RemoveDocument(Document* _document);
 		void AddContainer(Container* _container);
 		void RemoveContainer(Container* _container);
 
 	private:
 		string m_name;
 		string m_description;
-		list<Document*> m_documents;
         list<Container*> m_containers;
 };
 

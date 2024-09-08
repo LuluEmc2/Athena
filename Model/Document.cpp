@@ -25,11 +25,6 @@ int Document::GetPages() const
 	return m_pages;
 }
 
-list<Container*> Document::GetContainers() const
-{
-	return m_containers;
-}
-
 
 void Document::SetTitle(string _title)
 {
@@ -44,15 +39,4 @@ void Document::SetDescription(string _description)
 void Document::SetPages(int _pages)
 {
 	m_pages = _pages;
-}
-
-
-void Document::AddContainer(Container* _container)
-{
-	m_containers.push_back(_container);
-}
-
-void Document::RemoveContainer(Container* _container)
-{
-	m_containers.remove(_container);
 }

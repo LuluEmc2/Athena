@@ -1,7 +1,6 @@
 #ifndef _DOCUMENT_
 #define _DOCUMENT_
 
-#include "Container.hpp"
 #include <string>
 
 using namespace std;
@@ -14,21 +13,15 @@ class Document
 		string GetTitle() const;
 		string GetDescription() const;
 		int GetPages() const;
-		list<Container*> GetContainers() const;
 
 		void SetTitle(string _title);
 		void SetDescription(string _description);
 		void SetPages(int _pages);
 
-		void AddContainer(Container* _container);
-		void RemoveContainer(Container* _container);
-
 	private:
 		string m_title;
 		string m_description;
 		int m_pages;
-		list<Container*> m_containers;
-
 };
 
 #endif

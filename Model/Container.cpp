@@ -1,5 +1,4 @@
 #include "Container.hpp"
-#include "Document.hpp"
 
 using namespace std;
 
@@ -20,11 +19,6 @@ string Container::GetDescription() const
     return m_description;
 }
 
-list<Document*> Container::GetDocuments() const
-{
-    return m_documents;
-}
-
 list<Container*> Container::GetContainers() const
 {
     return m_containers;
@@ -41,16 +35,6 @@ void Container::SetDescription(string _description)
     m_description = _description;
 }
 
-
-void Container::AddDocument(Document* _document)
-{
-    m_documents.push_back(_document);
-}
-
-void Container::RemoveDocument(Document* _document)
-{
-    m_documents.remove(_document);
-}
 
 void Container::AddContainer(Container* _container)
 {
