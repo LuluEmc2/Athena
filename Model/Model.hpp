@@ -13,6 +13,9 @@ class Model
     public:
         Model();
 
+        list<Document*> GetDocuments();
+        list<Container*> GetContainers();
+
         void AddDocument(Document* _document);
         void RemoveDocument(Document* _document);
         void AddContainer(Container* _container);

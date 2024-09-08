@@ -4,10 +4,19 @@
 
 using namespace std;
 
-Model::Model()
-{
+Model::Model(){}
 
+
+list<Document*> Model::GetDocuments()
+{
+    return m_documents;
 }
+
+list<Container*> Model::GetContainers()
+{
+    return m_containers;
+}
+
 
 void Model::AddDocument(Document* _document)
 {
