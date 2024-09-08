@@ -9,6 +9,7 @@ Book::Book(string _title, string _description, int _pages)
 	m_pages = _pages;
 }
 
+
 string Book::GetTitle() const
 {
 	return m_title;
@@ -28,6 +29,23 @@ list<Container*> Book::GetContainers() const
 {
 	return m_containers;
 }
+
+
+void Book::SetTitle(string _title)
+{
+	m_title = _title;
+}
+
+void Book::SetDescription(string _description)
+{
+	m_description = _description;
+}
+
+void Book::SetPages(int _pages)
+{
+	m_pages = _pages;
+}
+
 
 void Book::AddContainer(Container* _container)
 {

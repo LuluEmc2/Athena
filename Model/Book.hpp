@@ -16,6 +16,10 @@ class Book
 		int GetPages() const;
 		list<Container*> GetContainers() const;
 
+		void SetTitle(string _title);
+		void SetDescription(string _description);
+		void SetPages(int _pages);
+
 		void AddContainer(Container* _container);
 		void RemoveContainer(Container* _container);
 
