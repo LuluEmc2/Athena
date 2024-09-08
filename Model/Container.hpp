@@ -13,18 +13,13 @@ class Container
 
 		string GetName() const;
 		string GetDescription() const;
-        list<Container*> GetContainers() const;
 
 		void SetName(string _name);
 		void SetDescription(string _description);
 
-		void AddContainer(Container* _container);
-		void RemoveContainer(Container* _container);
-
 	private:
 		string m_name;
 		string m_description;
-        list<Container*> m_containers;
 };
 
 #endif

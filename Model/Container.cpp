@@ -19,11 +19,6 @@ string Container::GetDescription() const
     return m_description;
 }
 
-list<Container*> Container::GetContainers() const
-{
-    return m_containers;
-}
-
 
 void Container::SetName(string _name)
 {
@@ -33,15 +28,4 @@ void Container::SetName(string _name)
 void Container::SetDescription(string _description)
 {
     m_description = _description;
-}
-
-
-void Container::AddContainer(Container* _container)
-{
-    m_containers.push_back(_container);
-}
-
-void Container::RemoveContainer(Container* _container)
-{
-    m_containers.remove(_container);
 }
