@@ -28,11 +28,11 @@ class Model
         list<Document*> m_documents;
         list<Container*> m_containers;
 
-        unordered_map<Document*, Container*> m_documentsToContainers;
-        unordered_map<Container*, Document*> m_containersToDocuments;
+        unordered_map<Document*, list<Container*>> m_documentsToContainers;
+        unordered_map<Container*, list<Document*>> m_containersToDocuments;
 
         unordered_map<Container*, Container*> m_childsToParents;
-        unordered_map<Container*, Container*> m_parentsToChilds;
+        unordered_map<Container*, list<Container*>> m_parentsToChilds;
 };
 
 #endif
