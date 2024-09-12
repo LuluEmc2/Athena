@@ -17,6 +17,11 @@ list<Document*> Model::GetDocuments(Container* _container)
     return m_containersToDocuments[_container];
 }
 
+list<Document*> Model::GetDocuments(string _containerId)
+{
+    return m_containersToDocuments[m_containers[_containerId]];
+}
+
 unordered_map<string, Container*> Model::GetContainers()
 {
     return m_containers;
