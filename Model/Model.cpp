@@ -17,7 +17,7 @@ list<Document*> Model::GetDocuments(Container* _container)
     return m_containersToDocuments[_container];
 }
 
-list<Container*> Model::GetContainers()
+unordered_map<string, Container*> Model::GetContainers()
 {
     return m_containers;
 }
@@ -55,12 +55,17 @@ void Model::RemoveDocument(Document* _document)
 
 void Model::AddContainer(Container* _container)
 {
-    m_containers.push_back(_container);
+    if(m_containers[_container->GetId()] != NULL)
+    {
+        return;
+    }
+
+    m_containers[_container->GetId()] = _container;
 }
 
 void Model::RemoveContainer(Container* _container)
 {
-    m_containers.remove(_container);
+    m_containers.erase(_container->GetId());
 }
 
 

@@ -8,8 +8,9 @@ using namespace std;
 class Container
 {
 	public:
-		Container(string _name, string _description = "");
+		Container(string _id, string _name, string _description = "");
 
+		string GetId() const;
 		string GetName() const;
 		string GetDescription() const;
 
@@ -17,6 +18,7 @@ class Container
 		void SetDescription(string _description);
 
 	private:
+		string m_id;
 		string m_name;
 		string m_description;
 };

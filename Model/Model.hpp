@@ -15,7 +15,7 @@ class Model
 
         unordered_map<string, Document*> GetDocuments();
         list<Document*> GetDocuments(Container* _container);
-        list<Container*> GetContainers();
+        unordered_map<string,Container*> GetContainers();
         list<Container*> GetContainers(Document* _document);
         Container* GetParent(Container* _childContainer);
         list<Container*> GetChilds(Container* _parentContainer);
@@ -30,7 +30,7 @@ class Model
 
     private:
         unordered_map<string, Document*> m_documents;
-        list<Container*> m_containers;
+        unordered_map<string,Container*> m_containers;
 
         unordered_map<Document*, list<Container*>> m_documentsToContainers;
         unordered_map<Container*, list<Document*>> m_containersToDocuments;

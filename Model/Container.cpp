@@ -2,12 +2,17 @@
 
 using namespace std;
 
-Container::Container(string _name, string _description)
+Container::Container(string _id, string _name, string _description)
 {
+    m_id = _id;
     m_name = _name;
     m_description = _description;
 }
 
+string Container::GetId() const
+{
+    return m_id;
+}
 
 string Container::GetName() const
 {
