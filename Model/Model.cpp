@@ -38,14 +38,16 @@ list<Container*> Model::GetChilds(Container* _parentContainer)
 }
 
 
-void Model::AddDocument(Document* _document)
+int Model::AddDocument(Document* _document)
 {
     if(m_documents[_document->GetId()] != NULL)
     {
-        return;
+        return 1;
     }
 
     m_documents[_document->GetId()] = _document;
+
+    return 0;
 }
 
 void Model::RemoveDocument(Document* _document)
@@ -53,14 +55,16 @@ void Model::RemoveDocument(Document* _document)
     m_documents.erase(_document->GetId());
 }
 
-void Model::AddContainer(Container* _container)
+int Model::AddContainer(Container* _container)
 {
     if(m_containers[_container->GetId()] != NULL)
     {
-        return;
+        return 1;
     }
 
     m_containers[_container->GetId()] = _container;
+
+    return 0;
 }
 
 void Model::RemoveContainer(Container* _container)

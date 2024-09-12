@@ -20,9 +20,9 @@ class Model
         Container* GetParent(Container* _childContainer);
         list<Container*> GetChilds(Container* _parentContainer);
 
-        void AddDocument(Document* _document);
+        int AddDocument(Document* _document);
         void RemoveDocument(Document* _document);
-        void AddContainer(Container* _container);
+        int AddContainer(Container* _container);
         void RemoveContainer(Container* _container);
 
         void Store(Document* _document, Container* _container);
