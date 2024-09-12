@@ -7,7 +7,7 @@ using namespace std;
 Model::Model(){}
 
 
-list<Document*> Model::GetDocuments()
+unordered_map<string, Document*> Model::GetDocuments()
 {
     return m_documents;
 }
@@ -40,12 +40,17 @@ list<Container*> Model::GetChilds(Container* _parentContainer)
 
 void Model::AddDocument(Document* _document)
 {
-    m_documents.push_back(_document);
+    if(m_documents[_document->GetId()] != NULL)
+    {
+        return;
+    }
+
+    m_documents[_document->GetId()] = _document;
 }
 
 void Model::RemoveDocument(Document* _document)
 {
-    m_documents.remove(_document);
+    m_documents.erase(_document->GetId());
 }
 
 void Model::AddContainer(Container* _container)

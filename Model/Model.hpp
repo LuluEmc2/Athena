@@ -13,7 +13,7 @@ class Model
     public:
         Model();
 
-        list<Document*> GetDocuments();
+        unordered_map<string, Document*> GetDocuments();
         list<Document*> GetDocuments(Container* _container);
         list<Container*> GetContainers();
         list<Container*> GetContainers(Document* _document);
@@ -29,7 +29,7 @@ class Model
         void Store(Container* _childContainer, Container* _parentContainer);
 
     private:
-        list<Document*> m_documents;
+        unordered_map<string, Document*> m_documents;
         list<Container*> m_containers;
 
         unordered_map<Document*, list<Container*>> m_documentsToContainers;
