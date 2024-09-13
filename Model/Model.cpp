@@ -42,9 +42,19 @@ Container* Model::GetParent(Container* _childContainer)
     return m_childsToParents[_childContainer];
 }
 
+Container* Model::GetParent(string _childContainerId)
+{
+    return m_childsToParents[m_containers[_childContainerId]];
+}
+
 list<Container*> Model::GetChilds(Container* _parentContainer)
 {
     return m_parentsToChilds[_parentContainer];
+}
+
+list<Container*> Model::GetChilds(string _parentContainerId)
+{
+    return m_parentsToChilds[m_containers[_parentContainerId]];
 }
 
 
