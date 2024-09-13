@@ -32,6 +32,11 @@ list<Container*> Model::GetContainers(Document* _document)
     return m_documentsToContainers[_document];
 }
 
+list<Container*> Model::GetContainers(string _documentId)
+{
+    return m_documentsToContainers[m_documents[_documentId]];
+}
+
 Container* Model::GetParent(Container* _childContainer)
 {
     return m_childsToParents[_childContainer];

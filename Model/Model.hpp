@@ -18,6 +18,7 @@ class Model
         list<Document*> GetDocuments(string _containerId);
         unordered_map<string,Container*> GetContainers();
         list<Container*> GetContainers(Document* _document);
+        list<Container*> GetContainers(string _documentId);
         Container* GetParent(Container* _childContainer);
         list<Container*> GetChilds(Container* _parentContainer);
 
