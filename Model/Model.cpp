@@ -93,14 +93,26 @@ void Model::RemoveContainer(Container* _container)
 }
 
 
-void Model::Store(Document* _document, Container* _container)
+void Model::StoreDocument(Document* _document, Container* _container)
 {
     m_documentsToContainers[_document].push_back(_container);
     m_containersToDocuments[_container].push_back(_document);
 }
 
-void Model::Store(Container* _childContainer, Container* _parentContainer)
+void Model::StoreDocument(string _documentId, string _containerId)
+{
+    m_documentsToContainers[m_documents[_documentId]].push_back(m_containers[_containerId]);
+    m_containersToDocuments[m_containers[_containerId]].push_back(m_documents[_documentId]);
+}
+
+void Model::StoreContainer(Container* _childContainer, Container* _parentContainer)
 {
     m_childsToParents[_childContainer] = _parentContainer;
     m_parentsToChilds[_parentContainer].push_back(_childContainer);
+}
+
+void Model::StoreContainer(string _childContainerId, string _parentContainerId)
+{
+    m_childsToParents[m_containers[_childContainerId]] = m_containers[_parentContainerId];
+    m_parentsToChilds[m_containers[_parentContainerId]].push_back(m_containers[_childContainerId]);
 }

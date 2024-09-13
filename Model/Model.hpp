@@ -29,8 +29,10 @@ class Model
         int AddContainer(Container* _container);
         void RemoveContainer(Container* _container);
 
-        void Store(Document* _document, Container* _container);
-        void Store(Container* _childContainer, Container* _parentContainer);
+        void StoreDocument(Document* _document, Container* _container);
+        void StoreDocument(string _documentId, string _containerId);
+        void StoreContainer(Container* _childContainer, Container* _parentContainer);
+        void StoreContainer(string _childContainerId, string _parentContainerId);
 
     private:
         unordered_map<string, Document*> m_documents;
