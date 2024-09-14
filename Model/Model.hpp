@@ -21,11 +21,11 @@ class Model
         unordered_set<Container*> GetContainers(string _documentId);
 
         //Returns 1 if there's already a doc with the same Id, 0 else
-        int AddDocument(Document* _document);
-        void RemoveDocument(Document* _document);
+        int AddDocument(string _id, string _title, string _description, int _pages);
+        void RemoveDocument(string _id);
         //Returns 1 if there's already a container with the same Id, 0 else
-        int AddContainer(Container* _container);
-        void RemoveContainer(Container* _container);
+        int AddContainer(string _id, string _title, string _description);
+        void RemoveContainer(string _id);
 
         void StoreDocument(Document* _document, Container* _container);
         void StoreDocument(string _documentId, string _containerId);

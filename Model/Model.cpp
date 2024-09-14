@@ -38,38 +38,40 @@ unordered_set<Container*> Model::GetContainers(string _documentId)
 }
 
 
-int Model::AddDocument(Document* _document)
+int Model::AddDocument(string _id, string _title, string _description, int _pages)
 {
-    if(m_documents[_document->GetId()] != NULL)
+    if(m_documents[_id] != nullptr)
     {
         return 1;
     }
 
-    m_documents[_document->GetId()] = _document;
+    m_documents[_id] = new Document(_title, _description, _pages);
 
     return 0;
 }
 
-void Model::RemoveDocument(Document* _document)
+void Model::RemoveDocument(string _id)
 {
-    m_documents.erase(_document->GetId());
+    delete m_documents[_id];
+    m_documents.erase(_id);
 }
 
-int Model::AddContainer(Container* _container)
+int Model::AddContainer(string _id, string _title, string _description)
 {
-    if(m_containers[_container->GetId()] != NULL)
+    if(m_containers[_id] != nullptr)
     {
         return 1;
     }
 
-    m_containers[_container->GetId()] = _container;
+    m_containers[_id] = new Container(_title, _description);
 
     return 0;
 }
 
-void Model::RemoveContainer(Container* _container)
+void Model::RemoveContainer(string _id)
 {
-    m_containers.erase(_container->GetId());
+    delete m_containers[_id];
+    m_containers.erase(_id);
 }
 
 
