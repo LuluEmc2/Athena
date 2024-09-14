@@ -2,11 +2,11 @@
 
 using namespace std;
 
-Document::Document(string _title, string _description, int _pages)
+Document::Document(string _title, string _description, float _length)
 {
 	m_title = _title;
 	m_description = _description;
-	m_pages = _pages;
+	m_length = _length;
 }
 
 string Document::GetTitle() const
@@ -19,9 +19,9 @@ string Document::GetDescription() const
 	return m_description;
 }
 
-int Document::GetPages() const
+float Document::GetLength() const
 {
-	return m_pages;
+	return m_length;
 }
 
 
@@ -35,7 +35,7 @@ void Document::SetDescription(string _description)
 	m_description = _description;
 }
 
-void Document::SetPages(int _pages)
+void Document::SetLength(float _length)
 {
-	m_pages = _pages;
+	m_length = _length;
 }

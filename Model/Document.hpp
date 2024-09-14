@@ -8,20 +8,20 @@ using namespace std;
 class Document
 {
 	public:
-		Document(string _title, string _description = "", int _pages = 0);
+		Document(string _title, string _description = "", float _length = 0);
 
 		string GetTitle() const;
 		string GetDescription() const;
-		int GetPages() const;
+		float GetLength() const;
 
 		void SetTitle(string _title);
 		void SetDescription(string _description);
-		void SetPages(int _pages);
+		void SetLength(float _length);
 
 	private:
 		string m_title;
 		string m_description;
-		int m_pages;
+		float m_length;
 };
 
 #endif

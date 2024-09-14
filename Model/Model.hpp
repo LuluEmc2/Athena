@@ -17,7 +17,7 @@ class Model
         unordered_set<string> GetContainers(string _documentId);
 
         //Returns 1 if there's already a doc with the same Id, 0 else
-        int AddDocument(string _id, string _title, string _description, int _pages);
+        int AddDocument(string _id, string _title, string _description, float _length);
         void RemoveDocument(string _id);
         //Returns 1 if there's already a container with the same Id, 0 else
         int AddContainer(string _id, string _title, string _description);
