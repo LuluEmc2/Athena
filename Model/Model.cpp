@@ -14,7 +14,7 @@ unordered_map<string, Document*> Model::GetDocuments()
 
 unordered_set<string> Model::GetDocuments(string _containerId)
 {
-    return m_containersToDocuments[m_containers[_containerId]];
+    return m_containersToDocuments[_containerId];
 }
 
 unordered_map<string, Container*> Model::GetContainers()
@@ -22,9 +22,9 @@ unordered_map<string, Container*> Model::GetContainers()
     return m_containers;
 }
 
-unordered_set<Container*> Model::GetContainers(string _documentId)
+unordered_set<string> Model::GetContainers(string _documentId)
 {
-    return m_documentsToContainers[m_documents[_documentId]];
+    return m_documentsToContainers[_documentId];
 }
 
 
