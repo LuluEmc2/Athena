@@ -33,6 +33,7 @@ class Model
         unordered_map<string, Document*> m_documents;
         unordered_map<string,Container*> m_containers;
 
+        //Parents documents and containers using ids.
         unordered_map<string, unordered_set<string>> m_documentsToContainers;
         unordered_map<string, unordered_set<string>> m_containersToDocuments;
 };
