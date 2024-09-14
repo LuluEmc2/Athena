@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Document::Document(string _title, string _description, int _pages, int _year, string _format)
+Document::Document(string _title, string _description, int _pages)
 {
 	m_title = _title;
 	m_description = _description;
