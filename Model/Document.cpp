@@ -2,19 +2,13 @@
 
 using namespace std;
 
-Document::Document(string _id, string _title, string _description, int _pages, int _year, string _format)
+Document::Document(string _title, string _description, int _pages, int _year, string _format)
 {
-	m_id = _id;
 	m_title = _title;
 	m_description = _description;
 	m_pages = _pages;
 	m_year = _year;
 	m_format = _format;
-}
-
-string Document::GetId() const
-{
-	return m_id;
 }
 
 string Document::GetTitle() const
