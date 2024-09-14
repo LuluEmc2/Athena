@@ -24,8 +24,10 @@ class Model
         list<Container*> GetChilds(Container* _parentContainer);
         list<Container*> GetChilds(string _parentContainerId);
 
+        //Returns 1 if there's already a doc with the same Id, 0 else
         int AddDocument(Document* _document);
         void RemoveDocument(Document* _document);
+        //Returns 1 if there's already a container with the same Id, 0 else
         int AddContainer(Container* _container);
         void RemoveContainer(Container* _container);
 
@@ -35,6 +37,7 @@ class Model
         void StoreContainer(string _childContainerId, string _parentContainerId);
 
     private:
+        //Links the Id with the objects
         unordered_map<string, Document*> m_documents;
         unordered_map<string,Container*> m_containers;
 
