@@ -37,26 +37,6 @@ unordered_set<Container*> Model::GetContainers(string _documentId)
     return m_documentsToContainers[m_documents[_documentId]];
 }
 
-Container* Model::GetParent(Container* _childContainer)
-{
-    return m_childsToParents[_childContainer];
-}
-
-Container* Model::GetParent(string _childContainerId)
-{
-    return m_childsToParents[m_containers[_childContainerId]];
-}
-
-unordered_set<Container*> Model::GetChilds(Container* _parentContainer)
-{
-    return m_parentsToChilds[_parentContainer];
-}
-
-unordered_set<Container*> Model::GetChilds(string _parentContainerId)
-{
-    return m_parentsToChilds[m_containers[_parentContainerId]];
-}
-
 
 int Model::AddDocument(Document* _document)
 {
@@ -103,16 +83,4 @@ void Model::StoreDocument(string _documentId, string _containerId)
 {
     m_documentsToContainers[m_documents[_documentId]].insert(m_containers[_containerId]);
     m_containersToDocuments[m_containers[_containerId]].insert(m_documents[_documentId]);
-}
-
-void Model::StoreContainer(Container* _childContainer, Container* _parentContainer)
-{
-    m_childsToParents[_childContainer] = _parentContainer;
-    m_parentsToChilds[_parentContainer].insert(_childContainer);
-}
-
-void Model::StoreContainer(string _childContainerId, string _parentContainerId)
-{
-    m_childsToParents[m_containers[_childContainerId]] = m_containers[_parentContainerId];
-    m_parentsToChilds[m_containers[_parentContainerId]].insert(m_containers[_childContainerId]);
 }

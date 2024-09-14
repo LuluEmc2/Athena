@@ -19,10 +19,6 @@ class Model
         unordered_map<string,Container*> GetContainers();
         unordered_set<Container*> GetContainers(Document* _document);
         unordered_set<Container*> GetContainers(string _documentId);
-        Container* GetParent(Container* _childContainer);
-        Container* GetParent(string _childContainerId);
-        unordered_set<Container*> GetChilds(Container* _parentContainer);
-        unordered_set<Container*> GetChilds(string _parentContainerId);
 
         //Returns 1 if there's already a doc with the same Id, 0 else
         int AddDocument(Document* _document);
@@ -33,9 +29,7 @@ class Model
 
         void StoreDocument(Document* _document, Container* _container);
         void StoreDocument(string _documentId, string _containerId);
-        void StoreContainer(Container* _childContainer, Container* _parentContainer);
-        void StoreContainer(string _childContainerId, string _parentContainerId);
-
+        
     private:
         //Links the Id with the objects
         unordered_map<string, Document*> m_documents;
@@ -43,9 +37,6 @@ class Model
 
         unordered_map<Document*, unordered_set<Container*>> m_documentsToContainers;
         unordered_map<Container*, unordered_set<Document*>> m_containersToDocuments;
-
-        unordered_map<Container*, Container*> m_childsToParents;
-        unordered_map<Container*, unordered_set<Container*>> m_parentsToChilds;
 };
 
 #endif
