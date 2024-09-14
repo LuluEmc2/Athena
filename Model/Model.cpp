@@ -75,8 +75,15 @@ void Model::RemoveContainer(string _id)
 }
 
 
-void Model::StoreDocument(string _documentId, string _containerId)
+int Model::StoreDocument(string _documentId, string _containerId)
 {
+    if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
+    {
+        return 1;
+    }
+
     m_documentsToContainers[m_documents[_documentId]].insert(m_containers[_containerId]);
     m_containersToDocuments[m_containers[_containerId]].insert(m_documents[_documentId]);
+
+    return 0;
 }

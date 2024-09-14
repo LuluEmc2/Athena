@@ -27,6 +27,7 @@ class Model
         int AddContainer(string _id, string _title, string _description);
         void RemoveContainer(string _id);
 
+        //Returns 1 if the container or the document doesn't exists, 0 else
         int StoreDocument(string _documentId, string _containerId);
         
     private:
