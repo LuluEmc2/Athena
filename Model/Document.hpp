@@ -14,22 +14,16 @@ class Document
 		string GetTitle() const;
 		string GetDescription() const;
 		int GetPages() const;
-		int GetYear() const;
-		string GetFormat() const;
 
 		void SetTitle(string _title);
 		void SetDescription(string _description);
 		void SetPages(int _pages);
-		void SetYear(int _year);
-		void SetFormat(string _format);
 
 	private:
 		string m_id;
 		string m_title;
 		string m_description;
 		int m_pages;
-		int m_year;
-		string m_format;
 };
 
 #endif

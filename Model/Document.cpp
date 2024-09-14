@@ -32,16 +32,6 @@ int Document::GetPages() const
 	return m_pages;
 }
 
-int Document::GetYear() const
-{
-	return m_year;
-}
-
-string Document::GetFormat() const
-{
-	return m_format;
-}
-
 
 void Document::SetTitle(string _title)
 {
@@ -56,14 +46,4 @@ void Document::SetDescription(string _description)
 void Document::SetPages(int _pages)
 {
 	m_pages = _pages;
-}
-
-void Document::SetYear(int _year)
-{
-	m_year = _year;
-}
-
-void Document::SetFormat(string _format)
-{
-	m_format = _format;
 }
