@@ -7,19 +7,9 @@ using namespace std;
 Model::Model(){}
 
 
-unordered_map<string, Document*> Model::GetDocuments()
-{
-    return m_documents;
-}
-
 unordered_set<string> Model::GetDocuments(string _containerId)
 {
     return m_containersToDocuments[_containerId];
-}
-
-unordered_map<string, Container*> Model::GetContainers()
-{
-    return m_containers;
 }
 
 unordered_set<string> Model::GetContainers(string _documentId)

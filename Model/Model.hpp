@@ -13,9 +13,7 @@ class Model
     public:
         Model();
 
-        unordered_map<string, Document*> GetDocuments();
         unordered_set<string> GetDocuments(string _containerId);
-        unordered_map<string,Container*> GetContainers();
         unordered_set<string> GetContainers(string _documentId);
 
         //Returns 1 if there's already a doc with the same Id, 0 else
