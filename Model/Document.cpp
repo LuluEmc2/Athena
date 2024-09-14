@@ -7,8 +7,6 @@ Document::Document(string _title, string _description, int _pages, int _year, st
 	m_title = _title;
 	m_description = _description;
 	m_pages = _pages;
-	m_year = _year;
-	m_format = _format;
 }
 
 string Document::GetTitle() const

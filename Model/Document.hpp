@@ -8,7 +8,7 @@ using namespace std;
 class Document
 {
 	public:
-		Document(string _title, string _description = "", int _pages = 0, int _year = 0, string _format = "");
+		Document(string _title, string _description = "", int _pages = 0);
 
 		string GetTitle() const;
 		string GetDescription() const;
