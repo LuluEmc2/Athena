@@ -27,8 +27,7 @@ class Model
         int AddContainer(string _id, string _title, string _description);
         void RemoveContainer(string _id);
 
-        void StoreDocument(Document* _document, Container* _container);
-        void StoreDocument(string _documentId, string _containerId);
+        int StoreDocument(string _documentId, string _containerId);
         
     private:
         //Links the Id with the objects

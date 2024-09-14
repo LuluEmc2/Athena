@@ -75,12 +75,6 @@ void Model::RemoveContainer(string _id)
 }
 
 
-void Model::StoreDocument(Document* _document, Container* _container)
-{
-    m_documentsToContainers[_document].insert(_container);
-    m_containersToDocuments[_container].insert(_document);
-}
-
 void Model::StoreDocument(string _documentId, string _containerId)
 {
     m_documentsToContainers[m_documents[_documentId]].insert(m_containers[_containerId]);
