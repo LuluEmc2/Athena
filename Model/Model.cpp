@@ -12,12 +12,7 @@ unordered_map<string, Document*> Model::GetDocuments()
     return m_documents;
 }
 
-unordered_set<Document*> Model::GetDocuments(Container* _container)
-{
-    return m_containersToDocuments[_container];
-}
-
-unordered_set<Document*> Model::GetDocuments(string _containerId)
+unordered_set<string> Model::GetDocuments(string _containerId)
 {
     return m_containersToDocuments[m_containers[_containerId]];
 }
@@ -25,11 +20,6 @@ unordered_set<Document*> Model::GetDocuments(string _containerId)
 unordered_map<string, Container*> Model::GetContainers()
 {
     return m_containers;
-}
-
-unordered_set<Container*> Model::GetContainers(Document* _document)
-{
-    return m_documentsToContainers[_document];
 }
 
 unordered_set<Container*> Model::GetContainers(string _documentId)
@@ -82,8 +72,8 @@ int Model::StoreDocument(string _documentId, string _containerId)
         return 1;
     }
 
-    m_documentsToContainers[m_documents[_documentId]].insert(m_containers[_containerId]);
-    m_containersToDocuments[m_containers[_containerId]].insert(m_documents[_documentId]);
+    m_documentsToContainers[_documentId].insert(_containerId);
+    m_containersToDocuments[_containerId].insert(_documentId);
 
     return 0;
 }

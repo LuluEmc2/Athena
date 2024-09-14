@@ -14,11 +14,9 @@ class Model
         Model();
 
         unordered_map<string, Document*> GetDocuments();
-        unordered_set<Document*> GetDocuments(Container* _container);
-        unordered_set<Document*> GetDocuments(string _containerId);
+        unordered_set<string> GetDocuments(string _containerId);
         unordered_map<string,Container*> GetContainers();
-        unordered_set<Container*> GetContainers(Document* _document);
-        unordered_set<Container*> GetContainers(string _documentId);
+        unordered_set<string> GetContainers(string _documentId);
 
         //Returns 1 if there's already a doc with the same Id, 0 else
         int AddDocument(string _id, string _title, string _description, int _pages);
@@ -35,8 +33,8 @@ class Model
         unordered_map<string, Document*> m_documents;
         unordered_map<string,Container*> m_containers;
 
-        unordered_map<Document*, unordered_set<Container*>> m_documentsToContainers;
-        unordered_map<Container*, unordered_set<Document*>> m_containersToDocuments;
+        unordered_map<string, unordered_set<string>> m_documentsToContainers;
+        unordered_map<string, unordered_set<string>> m_containersToDocuments;
 };
 
 #endif
