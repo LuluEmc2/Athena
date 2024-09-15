@@ -108,7 +108,6 @@ int Model::RemoveContainer(string _id)
     return 0;
 }
 
-
 int Model::StoreDocument(string _documentId, string _containerId)
 {
     if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
@@ -118,6 +117,24 @@ int Model::StoreDocument(string _documentId, string _containerId)
 
     m_documentsToContainers[_documentId].insert(_containerId);
     m_containersToDocuments[_containerId].insert(_documentId);
+
+    return 0;
+}
+
+int Model::UnstoreDocument(string _documentId, string _containerId)
+{
+    if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
+    {
+        return 1;
+    }
+
+    if(m_containersToDocuments[_containerId].count(_documentId) == 0)
+    {
+        return -1;
+    }
+
+    m_documentsToContainers[_documentId].erase(_containerId);
+    m_containersToDocuments[_containerId].erase(_documentId);
 
     return 0;
 }

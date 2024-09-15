@@ -34,6 +34,8 @@ class Model
 
         //Returns 1 if the container or the document doesn't exists, 0 else
         int StoreDocument(string _documentId, string _containerId);
+        //Returns 1 if the container or the document doesn't exists, -1 if the links between them doesn't exists, 0 else
+        int UnstoreDocument(string _documentId, string _containerId);
         
     private:
         //Links the Id with the objects
