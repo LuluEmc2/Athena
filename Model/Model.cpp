@@ -54,8 +54,13 @@ int Model::AddDocument(string _id, string _title, string _description, float _le
     return 0;
 }
 
-void Model::RemoveDocument(string _id)
+int Model::RemoveDocument(string _id)
 {
+    if(m_documents[_id] == nullptr)
+    {
+        return 1;
+    }
+
     delete m_documents[_id];
 
     for (auto& container : GetContainers(_id))
@@ -66,6 +71,8 @@ void Model::RemoveDocument(string _id)
     m_documentsToContainers.erase(_id);
 
     m_documents.erase(_id);
+
+    return 0;
 }
 
 int Model::AddContainer(string _id, string _title, string _description)
@@ -80,8 +87,13 @@ int Model::AddContainer(string _id, string _title, string _description)
     return 0;
 }
 
-void Model::RemoveContainer(string _id)
+int Model::RemoveContainer(string _id)
 {
+    if(m_containers[_id] == nullptr)
+    {
+        return 1;
+    }
+
     delete m_containers[_id];
 
     for (auto& document : GetDocuments(_id))
@@ -92,6 +104,8 @@ void Model::RemoveContainer(string _id)
     m_containersToDocuments.erase(_id);
 
     m_containers.erase(_id);
+
+    return 0;
 }
 
 
