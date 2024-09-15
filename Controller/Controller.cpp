@@ -4,7 +4,7 @@ using namespace std;
 
 Controller::Controller(){}
 
-tuple<string, string, float> Controller::GetDocument(string _documentId)
+tuple<string, string, double> Controller::GetDocument(string _documentId)
 {
     if(m_documents[_documentId] == nullptr)
     {
@@ -13,7 +13,7 @@ tuple<string, string, float> Controller::GetDocument(string _documentId)
 
     string title = m_documents[_documentId]->GetTitle();
     string description = m_documents[_documentId]->GetDescription();
-    float length = m_documents[_documentId]->GetLength();
+    double length = m_documents[_documentId]->GetLength();
 
     return {title, description, length};
 }
@@ -42,7 +42,7 @@ unordered_set<string> Controller::GetContainers(string _documentId)
 }
 
 
-int Controller::AddDocument(string _id, string _title, string _description, float _length)
+int Controller::AddDocument(string _id, string _title, string _description, double _length)
 {
     if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
     {

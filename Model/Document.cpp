@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Document::Document(string _title, string _description, float _length)
+Document::Document(string _title, string _description, double _length)
 {
 	m_title = _title;
 	m_description = _description;
@@ -19,7 +19,7 @@ string Document::GetDescription() const
 	return m_description;
 }
 
-float Document::GetLength() const
+double Document::GetLength() const
 {
 	return m_length;
 }
@@ -35,7 +35,7 @@ void Document::SetDescription(string _description)
 	m_description = _description;
 }
 
-void Document::SetLength(float _length)
+void Document::SetLength(double _length)
 {
 	m_length = _length;
 }
