@@ -23,11 +23,11 @@ class Model
         //Returns a set of the containers of document Ids
         unordered_set<string> GetContainers(string _documentId);
 
-        //Returns 1 if there's already a doc with the same Id, 0 else
+        //Returns 1 if there's already a doc or a container with the same Id, 0 else
         int AddDocument(string _id, string _title, string _description, float _length);
         //Returns 1 if there isn't a doc with this Id, 0 else
         int RemoveDocument(string _id);
-        //Returns 1 if there's already a container with the same Id, 0 else
+        //Returns 1 if there's already a container or a doc with the same Id, 0 else
         int AddContainer(string _id, string _title, string _description);
         //Returns 1 if there isn't a container with this Id, 0 else
         int RemoveContainer(string _id);

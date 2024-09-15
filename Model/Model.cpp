@@ -44,7 +44,7 @@ unordered_set<string> Model::GetContainers(string _documentId)
 
 int Model::AddDocument(string _id, string _title, string _description, float _length)
 {
-    if(m_documents[_id] != nullptr)
+    if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
     {
         return 1;
     }
@@ -77,7 +77,7 @@ int Model::RemoveDocument(string _id)
 
 int Model::AddContainer(string _id, string _title, string _description)
 {
-    if(m_containers[_id] != nullptr)
+    if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
     {
         return 1;
     }
