@@ -10,6 +10,10 @@ Technologies used in the project:
 
 * CPP
 
+## Requirement
+
+Using [JsonCpp](https://github.com/open-source-parsers/jsoncpp) librairie amalgamated in /lib/json/.
+
 ## Contribution Guidelines:
 
 For now I haven't any contribution system come back later !
