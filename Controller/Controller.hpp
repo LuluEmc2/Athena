@@ -1,18 +1,18 @@
-#ifndef _MODEL_
-#define _MODEL_
+#ifndef _CONTROLLER_
+#define _CONTROLLER_
 
 #include <unordered_set>
 #include <unordered_map>
 #include <tuple>
-#include "Document.hpp"
-#include "Container.hpp"
+#include "../Model/Document.hpp"
+#include "../Model/Container.hpp"
 
 using namespace std;
 
-class Model
+class Controller
 {
     public:
-        Model();
+        Controller();
 
         //Returns a tuple of title, description, length, returns {"", "", 0.0f} if Id is invalid
         tuple<string, string, float> GetDocument(string _documentId);

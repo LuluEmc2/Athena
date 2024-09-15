@@ -1,10 +1,10 @@
-#include "Model.hpp"
+#include "Controller.hpp"
 
 using namespace std;
 
-Model::Model(){}
+Controller::Controller(){}
 
-tuple<string, string, float> Model::GetDocument(string _documentId)
+tuple<string, string, float> Controller::GetDocument(string _documentId)
 {
     if(m_documents[_documentId] == nullptr)
     {
@@ -18,7 +18,7 @@ tuple<string, string, float> Model::GetDocument(string _documentId)
     return {title, description, length};
 }
 
-tuple<string, string> Model::GetContainer(string _containerId)
+tuple<string, string> Controller::GetContainer(string _containerId)
 {
     if(m_containers[_containerId] == nullptr)
     {
@@ -31,18 +31,18 @@ tuple<string, string> Model::GetContainer(string _containerId)
     return {name, description};
 }
 
-unordered_set<string> Model::GetDocuments(string _containerId)
+unordered_set<string> Controller::GetDocuments(string _containerId)
 {
     return m_containersToDocuments[_containerId];
 }
 
-unordered_set<string> Model::GetContainers(string _documentId)
+unordered_set<string> Controller::GetContainers(string _documentId)
 {
     return m_documentsToContainers[_documentId];
 }
 
 
-int Model::AddDocument(string _id, string _title, string _description, float _length)
+int Controller::AddDocument(string _id, string _title, string _description, float _length)
 {
     if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
     {
@@ -54,7 +54,7 @@ int Model::AddDocument(string _id, string _title, string _description, float _le
     return 0;
 }
 
-int Model::RemoveDocument(string _id)
+int Controller::RemoveDocument(string _id)
 {
     if(m_documents[_id] == nullptr)
     {
@@ -75,7 +75,7 @@ int Model::RemoveDocument(string _id)
     return 0;
 }
 
-int Model::AddContainer(string _id, string _title, string _description)
+int Controller::AddContainer(string _id, string _title, string _description)
 {
     if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
     {
@@ -87,7 +87,7 @@ int Model::AddContainer(string _id, string _title, string _description)
     return 0;
 }
 
-int Model::RemoveContainer(string _id)
+int Controller::RemoveContainer(string _id)
 {
     if(m_containers[_id] == nullptr)
     {
@@ -108,7 +108,7 @@ int Model::RemoveContainer(string _id)
     return 0;
 }
 
-int Model::StoreDocument(string _documentId, string _containerId)
+int Controller::StoreDocument(string _documentId, string _containerId)
 {
     if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
     {
@@ -121,7 +121,7 @@ int Model::StoreDocument(string _documentId, string _containerId)
     return 0;
 }
 
-int Model::UnstoreDocument(string _documentId, string _containerId)
+int Controller::UnstoreDocument(string _documentId, string _containerId)
 {
     if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
     {
