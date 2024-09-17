@@ -1,7 +1,7 @@
 *main.cpp
-*a.out
-Debug/
 
 lib/
+
+build/
 
 HPP tests.txt
