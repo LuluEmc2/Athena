@@ -1,4 +1,4 @@
-#include "Document.hpp"
+#include "document.hpp"
 
 using namespace std;
 

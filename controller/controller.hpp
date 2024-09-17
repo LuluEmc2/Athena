@@ -4,8 +4,8 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <tuple>
-#include "../Model/Document.hpp"
-#include "../Model/Container.hpp"
+#include "../model/document.hpp"
+#include "../model/container.hpp"
 
 using namespace std;
 
