@@ -12,9 +12,6 @@ Technologies used in the project:
 
 ## Requirements
 
-Using [JsonCpp](github.com/open-source-parsers/jsoncpp) librairie amalgamated in /lib/json/ (files in dist/ when you launch the amalgamate file in the source code folder).
-Using [Cpp-Httplib](github.com/yhirose/cpp-httplib) librairie (h file) in /lib/httplib/.
-
 ## Contribution Guidelines:
 
 For now I haven't any contribution system come back later !
