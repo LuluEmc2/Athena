@@ -19,3 +19,4 @@ For now I haven't any contribution system come back later !
 ## License:
 
 This project is licensed under the GNU GPLv3
+The librairies used are licensed on MIT.
