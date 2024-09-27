@@ -49,6 +49,11 @@ int Controller::AddDocument(string _id, string _title, string _description, doub
         return 1;
     }
 
+    if(_id == NO_FOUND_ERROR)
+    {
+        return -1;
+    }
+
     m_documents[_id] = new Document(_title, _description, _length);
 
     return 0;
