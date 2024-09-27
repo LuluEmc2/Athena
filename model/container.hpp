@@ -3,22 +3,23 @@
 
 #include <string>
 
-using namespace std;
-
-class Container
+namespace container 
 {
-	public:
-		Container(string _name, string _description = "");
+	class Container
+	{
+		public:
+			Container(std::string _name, std::string _description = "");
 
-		string GetName() const;
-		string GetDescription() const;
+			std::string GetName() const;
+			std::string GetDescription() const;
 
-		void SetName(string _name);
-		void SetDescription(string _description);
+			void SetName(std::string _name);
+			void SetDescription(std::string _description);
 
-	private:
-		string m_name;
-		string m_description;
-};
+		private:
+			std::string m_name;
+			std::string m_description;
+	};
+}
 
 #endif
