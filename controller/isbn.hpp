@@ -9,9 +9,10 @@
 #define TITLE_PROPERTY "title"
 #define PAGES_PROPERTY "number_of_pages"
 
-using namespace std;
-
-// Returns {HTML_ERROR_TEXT, "", error_code} wher a html error occurs
-tuple<string, string, int> GetDocISBN(long int ISBN);
+namespace isbn
+{
+    // Returns {HTML_ERROR_TEXT, "", error_code} wher a html error occurs
+    std::tuple<std::string, std::string, int> GetDocISBN(long int ISBN);
+}
 
 #endif
