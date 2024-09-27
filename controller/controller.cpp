@@ -4,31 +4,31 @@ using namespace std;
 
 Controller::Controller(){}
 
-tuple<string, string, double> Controller::GetDocument(string _documentId)
+tuple<string, string, string, double> Controller::GetDocument(string _documentId)
 {
     if(m_documents[_documentId] == nullptr)
     {
-        return {"", "", 0.0f};
+        return {"", "", "", 0.0f};
     }
 
     string title = m_documents[_documentId]->GetTitle();
     string description = m_documents[_documentId]->GetDescription();
     double length = m_documents[_documentId]->GetLength();
 
-    return {title, description, length};
+    return {_documentId, title, description, length};
 }
 
-tuple<string, string> Controller::GetContainer(string _containerId)
+tuple<string, string, string> Controller::GetContainer(string _containerId)
 {
     if(m_containers[_containerId] == nullptr)
     {
-        return {"", ""};
+        return {"", "", ""};
     }
 
     string name = m_containers[_containerId]->GetName();
     string description = m_containers[_containerId]->GetDescription();
 
-    return {name, description};
+    return {_containerId, name, description};
 }
 
 unordered_set<string> Controller::GetDocuments(string _containerId)

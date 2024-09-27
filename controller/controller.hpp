@@ -14,10 +14,10 @@ class Controller
     public:
         Controller();
 
-        //Returns a tuple of title, description, length, returns {"", "", 0.0f} if Id is invalid
-        tuple<string, string, double> GetDocument(string _documentId);
-        //Returns a tuple of name, description, returns {"", ""} if Id is invalid
-        tuple<string, string> GetContainer(string _containerId);
+        //Returns a tuple of id, title, description, length, returns {"", "", "", 0.0f} if Id is invalid
+        tuple<string, string, string, double> GetDocument(string _documentId);
+        //Returns a tuple of id, name, description, returns {"", "", ""} if Id is invalid
+        tuple<string, string, string> GetContainer(string _containerId);
         //Returns a set of the documents in container Ids
         unordered_set<string> GetDocuments(string _containerId);
         //Returns a set of the containers of document Ids
