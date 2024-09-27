@@ -29,6 +29,10 @@ link_libraries(container)
 add_library(document model/document.cpp)
 link_libraries(document)
 
+#Add document view librairy
+add_library(document_view view/document_view.cpp)
+link_libraries(document_view)
+
 #Link isbn to json
 target_link_libraries(isbn PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
 
@@ -40,6 +44,7 @@ target_include_directories(isbn PRIVATE
 #Add include
 include_directories(model/)
 include_directories(controller/)
+include_directories(view/)
 
 #Create exe
 add_executable(${PROJECT_NAME} main.cpp)
