@@ -8,11 +8,16 @@ Project based in MVC design pattern
 
 Technologies used in the project:
 
-* CPP
+* CPP (With CMake)
 
-## Requirements
+## External Librairies
 
-## Contribution Guidelines:
+Using :
+
+* [HTTPLib](https://github.com/yhirose/cpp-httplib/tree/master) Licensed under MIT license.
+* [Nlohmann Json Library](https://github.com/nlohmann/json) Licensed under MIT license.
+
+## Contribution Guidelines
 
 For now I haven't any contribution system come back later !
 
