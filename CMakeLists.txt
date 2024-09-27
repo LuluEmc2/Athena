@@ -17,14 +17,21 @@ add_subdirectory(lib/http)
 add_library(isbn controller/isbn.cpp)
 link_libraries(isbn)
 
+#Add controller librairy
+add_library(controller controller/controller.cpp)
+link_libraries(controller)
+
+#Add container librairy
+add_library(container model/container.cpp)
+link_libraries(container)
+
+#Add document librairy
+add_library(document model/document.cpp)
+link_libraries(document)
+
 #Link isbn to json
 target_link_libraries(isbn PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
 
-target_include_directories(isbn PRIVATE
-    ${CMAKE_SOURCE_DIR}/lib/json/include/       #JSON
-    ${CMAKE_SOURCE_DIR}/lib/http                #httplib
-    ${CMAKE_SOURCE_DIR}/controller              #Isbn
-)
 target_include_directories(isbn PRIVATE 
     ${CMAKE_SOURCE_DIR}/lib/json/include/
     ${CMAKE_SOURCE_DIR}/lib/http
