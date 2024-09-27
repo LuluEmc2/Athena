@@ -1,5 +1,5 @@
-#ifndef _DOCUMENT_VIEW_
-#define _DOCUMENT_VIEW_
+#ifndef _CONTAINER_VIEW_
+#define _CONTAINER_VIEW_
 
 #include <iostream>
 #include <tuple>
