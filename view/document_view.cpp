@@ -13,5 +13,5 @@ void medium_view(tuple<string, string, string, double> document)
 void long_view(tuple<string, string, string, double> document)
 {
     cout << get<0>(document) << " : " << get<1>(document) << " : \n\n\t"
-    << get<2>(document) << "\n\nPages : " << get<3>(document) << ".\n";
+    << get<2>(document) << "\n\nLength : " << get<3>(document) << ".\n";
 }
