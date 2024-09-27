@@ -8,7 +8,7 @@ tuple<string, string, string, double> Controller::GetDocument(string _documentId
 {
     if(m_documents[_documentId] == nullptr)
     {
-        return {"", "", "", 0.0f};
+        return {NO_FOUND_ERROR, "", "", 0.0f};
     }
 
     string title = m_documents[_documentId]->GetTitle();
@@ -22,7 +22,7 @@ tuple<string, string, string> Controller::GetContainer(string _containerId)
 {
     if(m_containers[_containerId] == nullptr)
     {
-        return {"", "", ""};
+        return {UNFOUND_ERROR, "", ""};
     }
 
     string name = m_containers[_containerId]->GetName();
