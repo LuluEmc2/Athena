@@ -22,7 +22,7 @@ tuple<string, string, string> Controller::GetContainer(string _containerId)
 {
     if(m_containers[_containerId] == nullptr)
     {
-        return {UNFOUND_ERROR, "", ""};
+        return {NO_FOUND_ERROR, "", ""};
     }
 
     string name = m_containers[_containerId]->GetName();
