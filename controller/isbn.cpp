@@ -1,9 +1,9 @@
-#include "isbn.hpp"
+#include <isbn.hpp>
 
 #include <algorithm>
 
-#include "nlohmann/json.hpp"
-#include "httplib.h"
+#include <nlohmann/json.hpp>
+#include <httplib.h>
 
 string remove_quotes(const string input) {
     string result = input;
