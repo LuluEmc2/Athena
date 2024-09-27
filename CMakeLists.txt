@@ -33,7 +33,7 @@ link_libraries(document)
 add_library(document_view view/document_view.cpp)
 link_libraries(document_view)
 
-#Add document view librairy
+#Add container view librairy
 add_library(container_view view/container_view.cpp)
 link_libraries(container_view)
 
