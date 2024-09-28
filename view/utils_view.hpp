@@ -6,7 +6,7 @@
 namespace utils_view
 {
     //Draws a line of the length and char given in params
-    void line(int _length, char _char);
+    void line(int _length, std::string _patern);
 }
 
 #endif

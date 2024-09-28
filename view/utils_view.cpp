@@ -2,11 +2,11 @@
 
 namespace utils_view
 {
-    void line(int _length, char _char)
+    void line(int _length, std::string _patern)
     {
-        for(int i; i < _length; i++)
+        for(int i = 0; i < _length; i++)
         {
-            std::cout << _char;
+            std::cout << _patern;
         }
 
         std::cout << "\n";
