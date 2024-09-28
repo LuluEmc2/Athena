@@ -37,6 +37,10 @@ link_libraries(document_view)
 add_library(container_view view/container_view.cpp)
 link_libraries(container_view)
 
+#Add utils view librairy
+add_library(utils_view view/utils_view.cpp)
+link_libraries(utils_view)
+
 #Link isbn to json
 target_link_libraries(isbn PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
 
