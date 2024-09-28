@@ -5,6 +5,7 @@
 #include <tuple>
 
 #define NO_FOUND_ERROR "__NF__"
+
 #define DOCUMENT_NO_FOUND_ERROR_TEXT "Document not found in database.\n"
 
 namespace document_view

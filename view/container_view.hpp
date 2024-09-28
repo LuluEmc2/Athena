@@ -5,6 +5,7 @@
 #include <tuple>
 
 #define NO_FOUND_ERROR "__NF__"
+
 #define CONTAINER_NO_FOUND_ERROR_TEXT "Container not found in database.\n"
 
 namespace container_view
