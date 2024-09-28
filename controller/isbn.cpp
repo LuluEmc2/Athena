@@ -51,7 +51,7 @@ namespace isbn
                 api_result = cli.Get("/");
                 goto check_http_code;
             default:
-                return {HTML_ERROR_TEXT, "", api_result->status};
+                return {HTML_ERROR, "", api_result->status};
         }
 
         nlohmann::json book_data = nlohmann::json::parse(api_result->body);

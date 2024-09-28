@@ -4,7 +4,8 @@
 #include <string>
 #include <tuple>
 
-#define HTML_ERROR_TEXT "__HE__"
+#define HTML_ERROR "__HE__"
+
 #define DESCRIPTION_PROPERTY "description"
 #define TITLE_PROPERTY "title"
 #define PAGES_PROPERTY "number_of_pages"
