@@ -2,19 +2,19 @@
 
 namespace document_view
 {
-    void short_view(std::tuple<std::string, std::string, std::string, double> document)
+    void short_view(std::tuple<std::string, std::string, std::string, double> _document)
     {
-        std::cout << std::get<0>(document) << "\n";
+        std::cout << std::get<0>(_document) << "\n";
     }
 
-    void medium_view(std::tuple<std::string, std::string, std::string, double> document)
+    void medium_view(std::tuple<std::string, std::string, std::string, double> _document)
     {
-        std::cout << std::get<0>(document) << " : " << std::get<1>(document) << "\n";
+        std::cout << std::get<0>(_document) << " : " << std::get<1>(_document) << "\n";
     }
 
-    void long_view(std::tuple<std::string, std::string, std::string, double> document)
+    void long_view(std::tuple<std::string, std::string, std::string, double> _document)
     {
-        std::cout << std::get<0>(document) << " : " << std::get<1>(document) << " : \n\n\t" 
-        << std::get<2>(document) << "\n\nLength : " << std::get<3>(document) << ".\n";
+        std::cout << std::get<0>(_document) << " : " << std::get<1>(_document) << " : \n\n\t" 
+        << std::get<2>(_document) << "\n\nLength : " << std::get<3>(_document) << ".\n";
     }
 }

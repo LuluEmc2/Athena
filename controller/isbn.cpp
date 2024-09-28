@@ -7,8 +7,8 @@
 
 namespace isbn
 {
-    std::string remove_quotes(const std::string input) {
-        std::string result = input;
+    std::string remove_quotes(const std::string _input) {
+        std::string result = _input;
 
         if (!result.empty() && result.front() == '"') {
             result.erase(result.begin());
@@ -29,13 +29,13 @@ namespace isbn
         return result;
     }
 
-    std::tuple<std::string, std::string, int> GetDocISBN(long int ISBN)
+    std::tuple<std::string, std::string, int> GetDocISBN(long int _ISBN)
     {
         httplib::Client cli("https://openlibrary.org");
 
         cli.set_follow_location(true);
 
-        auto api_result = cli.Get("/isbn/" + std::to_string(ISBN) + ".json");
+        auto api_result = cli.Get("/isbn/" + std::to_string(_ISBN) + ".json");
 
     check_http_code:
 

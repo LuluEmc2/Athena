@@ -12,7 +12,7 @@
 namespace isbn
 {
     // Returns {HTML_ERROR_TEXT, "", error_code} wher a html error occurs
-    std::tuple<std::string, std::string, int> GetDocISBN(long int ISBN);
+    std::tuple<std::string, std::string, int> GetDocISBN(long int _ISBN);
 }
 
 #endif

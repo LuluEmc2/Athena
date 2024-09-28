@@ -7,11 +7,11 @@
 namespace document_view
 {
     //Only id, arguments : a tuple of id, title, description, length
-    void short_view(std::tuple<std::string, std::string, std::string, double> document);
+    void short_view(std::tuple<std::string, std::string, std::string, double> _document);
     //Id and title, arguments : a tuple of id, title, description, length
-    void medium_view(std::tuple<std::string, std::string, std::string, double> document);
+    void medium_view(std::tuple<std::string, std::string, std::string, double> _document);
     //Everything, arguments : a tuple of id, title, description, length
-    void long_view(std::tuple<std::string, std::string, std::string, double> document);
+    void long_view(std::tuple<std::string, std::string, std::string, double> _document);
 }
 
 #endif
