@@ -65,7 +65,12 @@ namespace controller
 
     int Controller::AddDocument(std::string _id, std::string _title, std::string _description, double _length)
     {
-        if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
+        if(m_documents.count(_id) > 0 && m_documents[_id] != nullptr)
+        {
+            return 1;
+        }
+
+        if(m_containers.count(_id) > 0 && m_containers[_id] != nullptr)
         {
             return 1;
         }
@@ -113,7 +118,12 @@ namespace controller
 
     int Controller::AddContainer(std::string _id, std::string _name, std::string _description)
     {
-        if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
+        if(m_documents.count(_id) > 0 && m_documents[_id] != nullptr)
+        {
+            return 1;
+        }
+
+        if(m_containers.count(_id) > 0 && m_containers[_id] != nullptr)
         {
             return 1;
         }
