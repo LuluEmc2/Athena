@@ -191,6 +191,9 @@ namespace controller_view
             case -1:
                 std::cout << ID_IS_A_KEYWORD_ERROR_TEXT;
                 break;
+            case 2:
+                std::cout << CONTAINS_QUOTES_ERROR_TEXT;
+                break;
             case 0:
             default:
                 std::cout << DOCUMENT_CREATED_SUCCESS_TEXT;
@@ -235,6 +238,9 @@ namespace controller_view
                 break;
             case -1:
                 std::cout << ID_IS_A_KEYWORD_ERROR_TEXT;
+                break;
+            case 2:
+                std::cout << CONTAINS_QUOTES_ERROR_TEXT;
                 break;
             case 0:
             default:

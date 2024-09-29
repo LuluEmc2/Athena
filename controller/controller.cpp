@@ -75,6 +75,13 @@ namespace controller
             return -1;
         }
 
+        if (_id.find("\"") != std::string::npos
+        ||  _title.find("\"") != std::string::npos
+        ||  _description.find("\"") != std::string::npos) 
+        {
+            return 2;
+        }
+
         m_namesToIds[_title].insert(_id);
         m_documents[_id] = new document::Document(_title, _description, _length);
 
@@ -109,6 +116,18 @@ namespace controller
         if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
         {
             return 1;
+        }
+
+        if(_id == NO_FOUND_ERROR)
+        {
+            return -1;
+        }
+
+        if (_id.find("\"") != std::string::npos
+        ||  _name.find("\"") != std::string::npos
+        ||  _description.find("\"") != std::string::npos) 
+        {
+            return 2;
         }
 
         m_namesToIds[_name].insert(_id);

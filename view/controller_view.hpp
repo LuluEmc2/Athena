@@ -20,6 +20,7 @@
 #define DOCUMENT_NO_FOUND_ERROR_TEXT "Document not found in database.\n"
 #define CONTAINER_OR_DOCUMENT_NO_FOUND_ERROR_TEXT "Container or document not found in database.\n"
 #define ID_ALREADY_USED_ERROR_TEXT "The id is already used.\n"
+#define CONTAINS_QUOTES_ERROR_TEXT "Do not use quotes in your names, ids or descriptions.\n"
 #define ID_IS_A_KEYWORD_ERROR_TEXT "The id is a keyword.\n"
 #define CONTAINER_AND_DOCUMENT_NO_LINKED_ERROR_TEXT "Container and document are not linked together.\n"
 

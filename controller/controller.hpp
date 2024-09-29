@@ -33,11 +33,11 @@ namespace controller
             //Returns a set of the containers of document Ids
             std::unordered_set<std::string> GetIds(std::string _name);
 
-            //Returns 1 if there's already a doc or a container with the same Id, -1 if it uses a keyword, 0 else
+            //Returns 1 if there's already a doc or a container with the same Id, 2 if it uses a ", -1 if it uses a keyword, 0 else
             int AddDocument(std::string _id, std::string _title, std::string _description, double _length);
             //Returns 1 if there isn't a doc with this Id, 0 else
             int RemoveDocument(std::string _id);
-            //Returns 1 if there's already a container or a doc with the same Id, -1 if it uses a keyword, 0 else
+            //Returns 1 if there's already a container or a doc with the same Id, 2 if it uses a ", -1 if it uses a keyword, 0 else
             int AddContainer(std::string _id, std::string _name, std::string _description);
             //Returns 1 if there isn't a container with this Id, 0 else
             int RemoveContainer(std::string _id);
