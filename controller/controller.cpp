@@ -4,6 +4,22 @@ namespace controller
 {
     Controller::Controller(){}
 
+    std::unordered_map<std::string, document::Document*> Controller::GetAllDocuments()
+    {
+        return m_documents;
+    }
+
+    std::unordered_map<std::string, container::Container*> Controller::GetAllContainers()
+    {
+        return m_containers;
+    }
+
+    std::unordered_map<std::string, std::unordered_set<std::string>> Controller::GetAllConnexions()
+    {
+        return m_documentsToContainers;
+    }
+
+
     std::tuple<std::string, std::string, std::string, double> Controller::GetDocument(std::string _documentId)
     {
         if(m_documents[_documentId] == nullptr)

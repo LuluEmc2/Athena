@@ -16,6 +16,11 @@ namespace controller
         public:
             Controller();
 
+            std::unordered_map<std::string, document::Document*> GetAllDocuments();
+            std::unordered_map<std::string, container::Container*> GetAllContainers();
+            //Returns m_documentsToContainers
+            std::unordered_map<std::string, std::unordered_set<std::string>> GetAllConnexions();
+
             //Returns a tuple of id, title, description, length, returns {UNFOUND_ERROR, "", "", 0.0f} if Id is invalid
             std::tuple<std::string, std::string, std::string, double> GetDocument(std::string _documentId);
             //Returns a tuple of id, name, description, returns {UNFOUND_ERROR, "", ""} if Id is invalid
