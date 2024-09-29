@@ -25,6 +25,9 @@ namespace controller
             //Returns a set of the containers of document Ids
             std::unordered_set<std::string> GetContainers(std::string _documentId);
 
+            //Returns a set of the containers of document Ids
+            std::unordered_set<std::string> GetIds(std::string _name);
+
             //Returns 1 if there's already a doc or a container with the same Id, -1 if it uses a keyword, 0 else
             int AddDocument(std::string _id, std::string _title, std::string _description, double _length);
             //Returns 1 if there isn't a doc with this Id, 0 else
@@ -47,6 +50,9 @@ namespace controller
             //Parents documents and containers using ids.
             std::unordered_map<std::string, std::unordered_set<std::string>> m_documentsToContainers;
             std::unordered_map<std::string, std::unordered_set<std::string>> m_containersToDocuments;
+    
+            //Links the title with the ids for rapid search
+            std::unordered_map<std::string, std::unordered_set<std::string>> m_namesToIds;
     };
 }
 

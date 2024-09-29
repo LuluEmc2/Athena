@@ -41,6 +41,11 @@ namespace controller
         return m_documentsToContainers[_documentId];
     }
 
+    std::unordered_set<std::string> Controller::GetIds(std::string _name)
+    {
+        return m_namesToIds[_name];
+    }
+
 
     int Controller::AddDocument(std::string _id, std::string _title, std::string _description, double _length)
     {
@@ -54,6 +59,7 @@ namespace controller
             return -1;
         }
 
+        m_namesToIds[_title].insert(_id);
         m_documents[_id] = new document::Document(_title, _description, _length);
 
         return 0;
@@ -65,6 +71,8 @@ namespace controller
         {
             return 1;
         }
+
+        m_namesToIds.erase(m_documents[_id]->GetTitle());
 
         delete m_documents[_id];
 
@@ -87,6 +95,7 @@ namespace controller
             return 1;
         }
 
+        m_namesToIds[_name].insert(_id);
         m_containers[_id] = new container::Container(_name, _description);
 
         return 0;
@@ -98,6 +107,8 @@ namespace controller
         {
             return 1;
         }
+
+        m_namesToIds.erase(m_containers[_id]->GetName());
 
         delete m_containers[_id];
 
