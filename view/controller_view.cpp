@@ -107,6 +107,19 @@ namespace controller_view
     }
 
 
+    void show_search(controller::Controller* _controller)
+    {
+        std::string name = "";
+
+        name = utils_view::read_input<std::string>(ASK_FOR_NAME_TEXT);
+
+        for (const std::string id : _controller->GetIds(name))
+        {
+            std::cout << "\t-" << id << "\n";
+        }
+    }
+
+
     void show_add_document(controller::Controller* _controller)
     {
         std::string id = "";

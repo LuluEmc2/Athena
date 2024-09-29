@@ -52,6 +52,8 @@ namespace controller_view
     //_details :
     void show_container(controller::Controller* _controller, std::string _containerId, int _details);
 
+    void show_search(controller::Controller* _controller);
+
     void show_add_document(controller::Controller* _controller);
     void show_remove_document(controller::Controller* _controller);
     void show_add_container(controller::Controller* _controller);
