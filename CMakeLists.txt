@@ -41,6 +41,10 @@ link_libraries(container_view)
 add_library(utils_view view/utils_view.cpp)
 link_libraries(utils_view)
 
+#Add controller view librairy
+add_library(controller_view view/controller_view.cpp)
+link_libraries(controller_view)
+
 #Link isbn to json
 target_link_libraries(isbn PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
 
