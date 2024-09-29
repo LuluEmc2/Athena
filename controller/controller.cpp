@@ -80,14 +80,14 @@ namespace controller
         return 0;
     }
 
-    int Controller::AddContainer(std::string _id, std::string _title, std::string _description)
+    int Controller::AddContainer(std::string _id, std::string _name, std::string _description)
     {
         if(m_documents[_id] != nullptr || m_containers[_id] != nullptr)
         {
             return 1;
         }
 
-        m_containers[_id] = new container::Container(_title, _description);
+        m_containers[_id] = new container::Container(_name, _description);
 
         return 0;
     }

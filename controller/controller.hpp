@@ -30,7 +30,7 @@ namespace controller
             //Returns 1 if there isn't a doc with this Id, 0 else
             int RemoveDocument(std::string _id);
             //Returns 1 if there's already a container or a doc with the same Id, -1 if it uses a keyword, 0 else
-            int AddContainer(std::string _id, std::string _title, std::string _description);
+            int AddContainer(std::string _id, std::string _name, std::string _description);
             //Returns 1 if there isn't a container with this Id, 0 else
             int RemoveContainer(std::string _id);
 
