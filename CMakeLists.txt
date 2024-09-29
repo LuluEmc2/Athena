@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.25)
 project(athena)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
@@ -20,6 +20,10 @@ link_libraries(isbn)
 #Add controller librairy
 add_library(controller controller/controller.cpp)
 link_libraries(controller)
+
+#Add save librairy
+add_library(save controller/save.cpp)
+link_libraries(save)
 
 #Add container librairy
 add_library(container model/container.cpp)
