@@ -26,7 +26,7 @@ namespace save
         outFile << CONTAINERS_FLAG << "\n";
         for (const auto& [id, container] : containers)
         {
-            outFile << std::quoted(id) << " " << std::quoted(container->GetName()) << " " << std::quoted(container->GetDescription()) << "\n";
+            outFile << std::quoted(id) << " " << std::quoted(container->get_name()) << " " << std::quoted(container->get_description()) << "\n";
         }
 
         outFile << LINKS_FLAG << "\n";

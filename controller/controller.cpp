@@ -41,8 +41,8 @@ namespace controller
             return {NO_FOUND_ERROR, "", ""};
         }
 
-        std::string name = m_containers[_containerId]->GetName();
-        std::string description = m_containers[_containerId]->GetDescription();
+        std::string name = m_containers[_containerId]->get_name();
+        std::string description = m_containers[_containerId]->get_description();
 
         return {_containerId, name, description};
     }
@@ -153,7 +153,7 @@ namespace controller
             return 1;
         }
 
-        m_namesToIds.erase(m_containers[_id]->GetName());
+        m_namesToIds.erase(m_containers[_id]->get_name());
 
         delete m_containers[_id];
 

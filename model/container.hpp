@@ -10,11 +10,11 @@ namespace container
 		public:
 			Container(std::string _name, std::string _description = "");
 
-			std::string GetName() const;
-			std::string GetDescription() const;
+			std::string get_name() const;
+			std::string get_description() const;
 
-			void SetName(std::string _name);
-			void SetDescription(std::string _description);
+			void set_name(std::string _name);
+			void set_description(std::string _description);
 
 		private:
 			std::string m_name;
