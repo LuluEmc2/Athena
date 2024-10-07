@@ -9,33 +9,33 @@ namespace document
 		m_length = _length;
 	}
 
-	std::string Document::GetTitle() const
+	std::string Document::get_title() const
 	{
 		return m_title;
 	}
 
-	std::string Document::GetDescription() const
+	std::string Document::get_description() const
 	{
 		return m_description;
 	}
 
-	double Document::GetLength() const
+	double Document::get_length() const
 	{
 		return m_length;
 	}
 
 
-	void Document::SetTitle(std::string _title)
+	void Document::set_title(std::string _title)
 	{
 		m_title = _title;
 	}
 
-	void Document::SetDescription(std::string _description)
+	void Document::set_description(std::string _description)
 	{
 		m_description = _description;
 	}
 
-	void Document::SetLength(double _length)
+	void Document::set_length(double _length)
 	{
 		m_length = _length;
 	}

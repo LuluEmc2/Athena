@@ -27,9 +27,9 @@ namespace controller
             return {NO_FOUND_ERROR, "", "", 0.0f};
         }
 
-        std::string title = m_documents[_documentId]->GetTitle();
-        std::string description = m_documents[_documentId]->GetDescription();
-        double length = m_documents[_documentId]->GetLength();
+        std::string title = m_documents[_documentId]->get_title();
+        std::string description = m_documents[_documentId]->get_description();
+        double length = m_documents[_documentId]->get_length();
 
         return {_documentId, title, description, length};
     }
@@ -100,7 +100,7 @@ namespace controller
             return 1;
         }
 
-        m_namesToIds.erase(m_documents[_id]->GetTitle());
+        m_namesToIds.erase(m_documents[_id]->get_title());
 
         delete m_documents[_id];
 

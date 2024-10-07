@@ -20,7 +20,7 @@ namespace save
         outFile << DOCUMENTS_FLAG << "\n";
         for (const auto& [id, doc] : documents)
         {
-            outFile << std::quoted(id) << " " << std::quoted(doc->GetTitle()) << " " << std::quoted(doc->GetDescription()) << " " << doc->GetLength() << "\n";
+            outFile << std::quoted(id) << " " << std::quoted(doc->get_title()) << " " << std::quoted(doc->get_description()) << " " << doc->get_length() << "\n";
         }
 
         outFile << CONTAINERS_FLAG << "\n";

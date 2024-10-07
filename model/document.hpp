@@ -10,13 +10,13 @@ namespace document
 		public:
 			Document(std::string _title, std::string _description = "", double _length = 0);
 
-			std::string GetTitle() const;
-			std::string GetDescription() const;
-			double GetLength() const;
+			std::string get_title() const;
+			std::string get_description() const;
+			double get_length() const;
 
-			void SetTitle(std::string _title);
-			void SetDescription(std::string _description);
-			void SetLength(double _length);
+			void set_title(std::string _title);
+			void set_description(std::string _description);
+			void set_length(double _length);
 
 		private:
 			std::string m_title;
