@@ -7,7 +7,8 @@
 
 namespace isbn
 {
-    std::string remove_quotes(const std::string _input) {
+    std::string remove_quotes(const std::string _input) 
+    {
         std::string result = _input;
 
         if (!result.empty() && result.front() == '"') {
