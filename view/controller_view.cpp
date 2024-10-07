@@ -139,7 +139,7 @@ namespace controller_view
 
             isbn = utils_view::read_input<long int>(ASK_FOR_ISBN_TEXT);
 
-            auto document = isbn::GetDocISBN(isbn);
+            auto document = isbn::get_document_isbn(isbn);
 
             if(std::get<0>(document) == HTML_ERROR)
             {

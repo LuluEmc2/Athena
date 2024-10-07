@@ -30,7 +30,7 @@ namespace isbn
         return result;
     }
 
-    std::tuple<std::string, std::string, int> GetDocISBN(long int _ISBN)
+    std::tuple<std::string, std::string, int> get_document_isbn(long int _ISBN)
     {
         httplib::Client cli("https://openlibrary.org");
 
