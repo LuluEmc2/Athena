@@ -95,7 +95,7 @@ namespace controller
 
     int Controller::RemoveDocument(std::string _id)
     {
-        if(m_documents[_id] == nullptr)
+        if(m_documents.count(_id) == 0)
         {
             return 1;
         }
@@ -148,7 +148,7 @@ namespace controller
 
     int Controller::RemoveContainer(std::string _id)
     {
-        if(m_containers[_id] == nullptr)
+        if(m_containers.count(_id) == 0)
         {
             return 1;
         }
@@ -171,7 +171,7 @@ namespace controller
 
     int Controller::StoreDocument(std::string _documentId, std::string _containerId)
     {
-        if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
+        if(m_documents.count(_documentId) == 0 || m_documents.count(_documentId) == 0)
         {
             return 1;
         }
@@ -184,9 +184,14 @@ namespace controller
 
     int Controller::UnstoreDocument(std::string _documentId, std::string _containerId)
     {
-        if(m_documents[_documentId] == nullptr || m_containers[_containerId] == nullptr)
+        if(m_documents.count(_documentId) == 0 || m_documents.count(_documentId) == 0)
         {
             return 1;
+        }
+
+        if(m_containersToDocuments.count(_containerId) == 0)
+        {
+            return -1;
         }
 
         if(m_containersToDocuments[_containerId].count(_documentId) == 0)
