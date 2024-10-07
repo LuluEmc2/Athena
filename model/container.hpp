@@ -13,9 +13,6 @@ namespace container
 			std::string get_name() const;
 			std::string get_description() const;
 
-			void set_name(std::string _name);
-			void set_description(std::string _description);
-
 		private:
 			std::string m_name;
 			std::string m_description;

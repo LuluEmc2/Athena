@@ -17,15 +17,4 @@ namespace container
     {
         return m_description;
     }
-
-
-    void Container::set_name(std::string _name)
-    {
-        m_name = _name;
-    }
-
-    void Container::set_description(std::string _description)
-    {
-        m_description = _description;
-    }
 }
