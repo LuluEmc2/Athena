@@ -6,7 +6,7 @@ namespace save_view
     {
         std::string file_path = utils_view::read_input<std::string>(ASK_FOR_PATH_TEXT);
 
-        switch(save::SaveData(file_path, _controller))
+        switch(save::save_data(file_path, _controller))
         {
             case 1:
                 std::cout << CANNOT_OPEN_FILE_ERROR_TEXT;
@@ -22,7 +22,7 @@ namespace save_view
     {
         std::string file_path = utils_view::read_input<std::string>(ASK_FOR_PATH_TEXT);
 
-        switch(save::LoadData(file_path, _controller))
+        switch(save::load_data(file_path, _controller))
         {
             case 1:
                 std::cout << CANNOT_OPEN_FILE_ERROR_TEXT;
