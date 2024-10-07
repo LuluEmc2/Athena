@@ -6,7 +6,7 @@ namespace controller_view
     {
         auto containers = _controller->get_containers(_documentId);
 
-        for (const std::string container : containers)
+        for (const auto container : containers)
         {
             std::cout << "\t-" << container << "\n";
         }
@@ -58,7 +58,7 @@ namespace controller_view
     {
         auto documents = _controller->get_documents(_containerId);
 
-        for (const std::string document : documents)
+        for (const auto document : documents)
         {
             std::cout << "\t-" << document << "\n";
         }
@@ -113,7 +113,7 @@ namespace controller_view
 
         name = utils_view::read_input<std::string>(ASK_FOR_NAME_TEXT);
 
-        for (const std::string id : _controller->get_ids(name))
+        for (const auto id : _controller->get_ids(name))
         {
             std::cout << "\t-" << id << "\n";
         }
@@ -139,7 +139,7 @@ namespace controller_view
 
             isbn = utils_view::read_input<long int>(ASK_FOR_ISBN_TEXT);
 
-            std::tuple<std::string, std::string, int> document = isbn::GetDocISBN(isbn);
+            auto document = isbn::GetDocISBN(isbn);
 
             if(std::get<0>(document) == HTML_ERROR)
             {
