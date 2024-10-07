@@ -11,7 +11,7 @@
 #include <utils_view.hpp>
 
 #include <define_global.hpp>
-#include <define_view_en.hpp>
+#include <define_view.hpp>
 
 namespace controller_view
 {
