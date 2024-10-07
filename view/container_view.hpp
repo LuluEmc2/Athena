@@ -4,9 +4,8 @@
 #include <iostream>
 #include <tuple>
 
-#define NO_FOUND_ERROR "__NF__"
-
-#define CONTAINER_NO_FOUND_ERROR_TEXT "Container not found in database.\n"
+#include <define_global.hpp>
+#include <define_view_en.hpp>
 
 namespace container_view
 {

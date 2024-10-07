@@ -6,11 +6,7 @@
 #include <save.hpp>
 #include <utils_view.hpp>
 
-#define CANNOT_OPEN_FILE_ERROR_TEXT "The file could not be opened."
-
-#define FILE_SAVE_SUCCESS_TEXT "The file has been successfully saved."
-
-#define ASK_FOR_PATH_TEXT "File Path : "
+#include <define_view_en.hpp>
 
 namespace save_view
 {

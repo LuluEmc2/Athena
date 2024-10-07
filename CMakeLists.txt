@@ -65,6 +65,7 @@ target_include_directories(isbn PRIVATE
 include_directories(model/)
 include_directories(controller/)
 include_directories(view/)
+include_directories(defines/)
 
 #Create exe
 add_executable(${PROJECT_NAME} main.cpp)

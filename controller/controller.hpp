@@ -7,7 +7,7 @@
 #include <document.hpp>
 #include <container.hpp>
 
-#define NO_FOUND_ERROR "__NF__"
+#include <define_global.hpp>
 
 namespace controller
 {

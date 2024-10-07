@@ -4,11 +4,7 @@
 #include <string>
 #include <tuple>
 
-#define HTML_ERROR "__HE__"
-
-#define DESCRIPTION_PROPERTY "description"
-#define TITLE_PROPERTY "title"
-#define PAGES_PROPERTY "number_of_pages"
+#include <define_global.hpp>
 
 namespace isbn
 {

@@ -5,7 +5,7 @@
 #include <sstream>
 #include <limits>
 
-#define INVALID_ENTRY_ERROR "Not a valid entry."
+#include <define_view_en.hpp>
 
 namespace utils_view
 {

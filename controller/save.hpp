@@ -8,9 +8,7 @@
 #include <document.hpp>
 #include <container.hpp>
 
-#define DOCUMENTS_FLAG "__DOCUMENTS__"
-#define CONTAINERS_FLAG "__CONTAINERS__"
-#define LINKS_FLAG "__LINKS__"
+#include <define_global.hpp>
 
 namespace save
 {

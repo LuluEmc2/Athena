@@ -4,9 +4,8 @@
 #include <iostream>
 #include <tuple>
 
-#define NO_FOUND_ERROR "__NF__"
-
-#define DOCUMENT_NO_FOUND_ERROR_TEXT "Document not found in database.\n"
+#include <define_global.hpp>
+#include <define_view_en.hpp>
 
 namespace document_view
 {
