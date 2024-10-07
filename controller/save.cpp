@@ -6,9 +6,9 @@ namespace save
 
     int SaveData(std::string _filepath, controller::Controller* _controller)
     {
-        auto documents = _controller->GetAllDocuments();
-        auto containers = _controller->GetAllContainers();
-        auto documentsToContainers = _controller->GetAllConnexions();
+        auto documents = _controller->get_all_documents();
+        auto containers = _controller->get_all_containers();
+        auto documentsToContainers = _controller->get_all_connexions();
 
         std::ofstream outFile(_filepath);
 
@@ -69,7 +69,7 @@ namespace save
 
             iss >> std::quoted(id) >> std::quoted(title) >> std::quoted(description) >> length;
 
-            _controller->AddDocument(id, title, description, length);
+            _controller->add_document(id, title, description, length);
         }
 
         if (line == CONTAINERS_FLAG)
@@ -80,7 +80,7 @@ namespace save
                 std::string id, name, description;
                 if (iss >> std::quoted(id) >> std::quoted(name) >> std::quoted(description))
                 {
-                    _controller->AddContainer(id, name, description);
+                    _controller->add_container(id, name, description);
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace save
                 // Lire tous les identifiants de conteneurs pour ce document
                 while (containerStream >> std::quoted(containerId))
                 {
-                    _controller->StoreDocument(docId, containerId);
+                    _controller->store_document(docId, containerId);
                 }
             }
         }

@@ -4,7 +4,7 @@ namespace controller_view
 {
     void show_containers(controller::Controller* _controller, std::string _documentId)
     {
-        std::unordered_set<std::string> containers = _controller->GetContainers(_documentId);
+        auto containers = _controller->get_containers(_documentId);
 
         for (const std::string container : containers)
         {
@@ -14,7 +14,7 @@ namespace controller_view
 
     void show_document(controller::Controller* _controller, std::string _documentId, int _details)
     {
-        std::tuple<std::string, std::string, std::string, double> document = _controller->GetDocument(_documentId);
+        auto document = _controller->get_document(_documentId);
 
         if(std::get<0>(document) == NO_FOUND_ERROR)
         {
@@ -56,7 +56,7 @@ namespace controller_view
 
     void show_documents(controller::Controller* _controller, std::string _containerId)
     {
-        std::unordered_set<std::string> documents = _controller->GetDocuments(_containerId);
+        auto documents = _controller->get_documents(_containerId);
 
         for (const std::string document : documents)
         {
@@ -66,7 +66,7 @@ namespace controller_view
 
     void show_container(controller::Controller* _controller, std::string _containerId, int _details)
     {
-        std::tuple<std::string, std::string, std::string> container = _controller->GetContainer(_containerId);
+        auto container = _controller->get_container(_containerId);
 
         if(std::get<0>(container) == NO_FOUND_ERROR)
         {
@@ -113,7 +113,7 @@ namespace controller_view
 
         name = utils_view::read_input<std::string>(ASK_FOR_NAME_TEXT);
 
-        for (const std::string id : _controller->GetIds(name))
+        for (const std::string id : _controller->get_ids(name))
         {
             std::cout << "\t-" << id << "\n";
         }
@@ -183,7 +183,7 @@ namespace controller_view
         length = utils_view::read_input<double>(ASK_FOR_LENGTH_TEXT);
 
     add_document:
-        switch(_controller->AddDocument(id, title, description, length))
+        switch(_controller->add_document(id, title, description, length))
         {
             case 1:
                 std::cout << ID_ALREADY_USED_ERROR_TEXT;
@@ -208,7 +208,7 @@ namespace controller_view
 
         id = utils_view::read_input<std::string>(ASK_FOR_DOCUMENT_ID_TEXT);
 
-        switch(_controller->RemoveDocument(id))
+        switch(_controller->remove_document(id))
         {
             case 1:
                 std::cout << DOCUMENT_NO_FOUND_ERROR_TEXT;
@@ -231,7 +231,7 @@ namespace controller_view
         description = utils_view::read_input<std::string>(ASK_FOR_DESCRIPTION_TEXT);
 
 
-        switch(_controller->AddContainer(id, name, description))
+        switch(_controller->add_container(id, name, description))
         {
             case 1:
                 std::cout << ID_ALREADY_USED_ERROR_TEXT;
@@ -256,7 +256,7 @@ namespace controller_view
 
         id = utils_view::read_input<std::string>(ASK_FOR_CONTAINER_ID_TEXT);
 
-        switch(_controller->RemoveContainer(id))
+        switch(_controller->remove_container(id))
         {
             case 1:
                 std::cout << CONTAINER_NO_FOUND_ERROR_TEXT;
@@ -278,7 +278,7 @@ namespace controller_view
 
         container_id = utils_view::read_input<std::string>(ASK_FOR_CONTAINER_ID_TEXT);
 
-        switch(_controller->StoreDocument(document_id, container_id))
+        switch(_controller->store_document(document_id, container_id))
         {
             case 1:
                 std::cout << CONTAINER_OR_DOCUMENT_NO_FOUND_ERROR_TEXT;
@@ -300,7 +300,7 @@ namespace controller_view
 
         container_id = utils_view::read_input<std::string>(ASK_FOR_CONTAINER_ID_TEXT);
 
-        switch(_controller->UnstoreDocument(document_id, container_id))
+        switch(_controller->unstore_document(document_id, container_id))
         {
             case 1:
                 std::cout << CONTAINER_OR_DOCUMENT_NO_FOUND_ERROR_TEXT;

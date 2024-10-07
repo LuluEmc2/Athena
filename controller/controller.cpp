@@ -4,23 +4,23 @@ namespace controller
 {
     Controller::Controller(){}
 
-    std::unordered_map<std::string, document::Document*> Controller::GetAllDocuments()
+    std::unordered_map<std::string, document::Document*> Controller::get_all_documents()
     {
         return m_documents;
     }
 
-    std::unordered_map<std::string, container::Container*> Controller::GetAllContainers()
+    std::unordered_map<std::string, container::Container*> Controller::get_all_containers()
     {
         return m_containers;
     }
 
-    std::unordered_map<std::string, std::unordered_set<std::string>> Controller::GetAllConnexions()
+    std::unordered_map<std::string, std::unordered_set<std::string>> Controller::get_all_connexions()
     {
         return m_documentsToContainers;
     }
 
 
-    std::tuple<std::string, std::string, std::string, double> Controller::GetDocument(std::string _documentId)
+    std::tuple<std::string, std::string, std::string, double> Controller::get_document(std::string _documentId)
     {
         if(m_documents[_documentId] == nullptr)
         {
@@ -34,7 +34,7 @@ namespace controller
         return {_documentId, title, description, length};
     }
 
-    std::tuple<std::string, std::string, std::string> Controller::GetContainer(std::string _containerId)
+    std::tuple<std::string, std::string, std::string> Controller::get_container(std::string _containerId)
     {
         if(m_containers[_containerId] == nullptr)
         {
@@ -47,23 +47,23 @@ namespace controller
         return {_containerId, name, description};
     }
 
-    std::unordered_set<std::string> Controller::GetDocuments(std::string _containerId)
+    std::unordered_set<std::string> Controller::get_documents(std::string _containerId)
     {
         return m_containersToDocuments[_containerId];
     }
 
-    std::unordered_set<std::string> Controller::GetContainers(std::string _documentId)
+    std::unordered_set<std::string> Controller::get_containers(std::string _documentId)
     {
         return m_documentsToContainers[_documentId];
     }
 
-    std::unordered_set<std::string> Controller::GetIds(std::string _name)
+    std::unordered_set<std::string> Controller::get_ids(std::string _name)
     {
         return m_namesToIds[_name];
     }
 
 
-    int Controller::AddDocument(std::string _id, std::string _title, std::string _description, double _length)
+    int Controller::add_document(std::string _id, std::string _title, std::string _description, double _length)
     {
         if(m_documents.count(_id) > 0 && m_documents[_id] != nullptr)
         {
@@ -93,7 +93,7 @@ namespace controller
         return 0;
     }
 
-    int Controller::RemoveDocument(std::string _id)
+    int Controller::remove_document(std::string _id)
     {
         if(m_documents.count(_id) == 0)
         {
@@ -104,7 +104,7 @@ namespace controller
 
         delete m_documents[_id];
 
-        for (auto& container : GetContainers(_id))
+        for (auto& container : get_containers(_id))
         {
             m_containersToDocuments[container].erase(_id);
         }
@@ -116,7 +116,7 @@ namespace controller
         return 0;
     }
 
-    int Controller::AddContainer(std::string _id, std::string _name, std::string _description)
+    int Controller::add_container(std::string _id, std::string _name, std::string _description)
     {
         if(m_documents.count(_id) > 0 && m_documents[_id] != nullptr)
         {
@@ -146,7 +146,7 @@ namespace controller
         return 0;
     }
 
-    int Controller::RemoveContainer(std::string _id)
+    int Controller::remove_container(std::string _id)
     {
         if(m_containers.count(_id) == 0)
         {
@@ -157,7 +157,7 @@ namespace controller
 
         delete m_containers[_id];
 
-        for (auto& document : GetDocuments(_id))
+        for (auto& document : get_documents(_id))
         {
             m_documentsToContainers[document].erase(_id);
         }
@@ -169,7 +169,7 @@ namespace controller
         return 0;
     }
 
-    int Controller::StoreDocument(std::string _documentId, std::string _containerId)
+    int Controller::store_document(std::string _documentId, std::string _containerId)
     {
         if(m_documents.count(_documentId) == 0 || m_documents.count(_documentId) == 0)
         {
@@ -182,7 +182,7 @@ namespace controller
         return 0;
     }
 
-    int Controller::UnstoreDocument(std::string _documentId, std::string _containerId)
+    int Controller::unstore_document(std::string _documentId, std::string _containerId)
     {
         if(m_documents.count(_documentId) == 0 || m_documents.count(_documentId) == 0)
         {
