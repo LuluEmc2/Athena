@@ -23,20 +23,4 @@ namespace document
 	{
 		return m_length;
 	}
-
-
-	void Document::set_title(std::string _title)
-	{
-		m_title = _title;
-	}
-
-	void Document::set_description(std::string _description)
-	{
-		m_description = _description;
-	}
-
-	void Document::set_length(double _length)
-	{
-		m_length = _length;
-	}
 }

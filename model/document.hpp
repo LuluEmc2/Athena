@@ -12,11 +12,7 @@ namespace document
 
 			std::string get_title() const;
 			std::string get_description() const;
-			double get_length() const;
-
-			void set_title(std::string _title);
-			void set_description(std::string _description);
-			void set_length(double _length);
+			double get_length() const;;
 
 		private:
 			std::string m_title;
